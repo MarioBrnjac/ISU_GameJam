@@ -1,0 +1,8 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/UI.uss?fileID=7433441132597879392&amp;guid=ea186bdc0a076af4cbfbe1557768f20e&amp;type=3#UI" />
+    <engine:VisualElement style="flex-grow: 1;">
+        <engine:Label text="Text Title" class="header" style="background-color: rgba(0, 0, 0, 0); color: rgb(255, 144, 0);" />
+        <engine:Button text="Button" name="TextButton" class="button" />
+    </engine:VisualElement>
+    <engine:TabView style="height: 52px; background-image: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Textures/Brushed%20Metal%203.jpg?fileID=2800000&amp;guid=f88677df267a41d6be1e7a6133e7d227&amp;type=3#Brushed Metal 3&quot;); width: 1920px;" />
+</engine:UXML>
