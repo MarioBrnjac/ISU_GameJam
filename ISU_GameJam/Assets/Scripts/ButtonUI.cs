@@ -15,10 +15,10 @@ public class ButtonUI : MonoBehaviour
             Debug.LogError("UIDocument component not found on GameObject.");
             return;
         }
-        _uiButton = _buttonDocument.rootVisualElement.Q<Button>("TextButton");
+        _uiButton = _buttonDocument.rootVisualElement.Q<Button>("File");
         if (_uiButton == null)
         {
-            Debug.LogError("Button with the name 'TextButton' not found.");
+            Debug.LogError("Button with the name 'File' not found.");
             return;
         }
         _uiButton.RegisterCallback<ClickEvent>(OnPlayGameClick);
@@ -32,6 +32,6 @@ public class ButtonUI : MonoBehaviour
     }
     private void OnPlayGameClick(ClickEvent evt)
     {
-        Debug.Log("You pressed the Start button");
+        Debug.Log("Hello Virgin");
     }
 }

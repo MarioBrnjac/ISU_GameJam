@@ -1,8 +1,7 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/UI.uss?fileID=7433441132597879392&amp;guid=ea186bdc0a076af4cbfbe1557768f20e&amp;type=3#UI" />
-    <engine:VisualElement style="flex-grow: 1;">
-        <engine:Label text="Text Title" class="header" style="background-color: rgba(0, 0, 0, 0); color: rgb(255, 144, 0);" />
-        <engine:Button text="Button" name="TextButton" class="button" />
+    <engine:VisualElement name="VisualElement" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20PNGS/Desktop%20UI.png?fileID=8406669104791796323&amp;guid=6e46dce46ed1cca418ef1e915db4f36c&amp;type=3#Desktop UI_0&quot;); background-color: rgba(112, 184, 255, 0);">
+        <engine:Button name="File" class="button" style="background-image: url(&quot;project://database/Assets/UI%20PNGS/File%20Icon.png?fileID=2800000&amp;guid=2d79d08e00576cf4d83ab178d89e084e&amp;type=3#File Icon&quot;); width: 120px; height: 120px; position: absolute; left: 50px; top: 50px; background-color: rgb(112, 184, 255); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+        <engine:Button text="&#10;" name="Settings" parse-escape-sequences="true" style="background-image: url(&quot;project://database/Assets/UI%20PNGS/SettingsIcon.png?fileID=2800000&amp;guid=a31bb3594b3069f4fa1feeb5f53ceced&amp;type=3#SettingsIcon&quot;); background-color: rgb(255, 149, 120); width: 80px; height: 80px; position: absolute; top: 992px; left: 48px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
     </engine:VisualElement>
-    <engine:TabView style="height: 52px; background-image: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Textures/Brushed%20Metal%203.jpg?fileID=2800000&amp;guid=f88677df267a41d6be1e7a6133e7d227&amp;type=3#Brushed Metal 3&quot;); width: 1920px;" />
 </engine:UXML>
