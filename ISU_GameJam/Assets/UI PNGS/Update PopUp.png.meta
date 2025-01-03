@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0014e05d0d11bd8439202e92829fc39d
+guid: 22dd0873fcd698644a4df17c9c6e8e38
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3544368030087442470
-    second: Asterisk_0
+      213: -4240616270434955170
+    second: Update PopUp_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Asterisk_0
+      name: Update PopUp_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 488
-        height: 512
+        width: 5064
+        height: 2772
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 620fc9ac1ff103130800000000000000
-      internalID: 3544368030087442470
+      spriteID: e509bf348fd4625c0800000000000000
+      internalID: -4240616270434955170
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Asterisk_0: 3544368030087442470
+      Update PopUp_0: -4240616270434955170
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
