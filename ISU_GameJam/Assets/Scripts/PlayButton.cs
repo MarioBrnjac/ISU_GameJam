@@ -12,8 +12,10 @@ public class PlayButton : MonoBehaviour
     private Button _anotherButton;
     private VisualElement _imageElement;
     private PlayableDirector _timelineDirector;
+    private AudioSource _audioSource;
     private void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
         _buttonDocument = GetComponent<UIDocument>();
         if (_buttonDocument == null)
         {
@@ -42,7 +44,10 @@ public class PlayButton : MonoBehaviour
     }
     private void OnPlayGameClick(ClickEvent evt)
     {
-
+        if(evt != null)
+        {
+            _audioSource.Play();
+        }
         if (_timelineDirector != null)
         {
             _timelineDirector.Play();  // This starts the timeline and its animations

@@ -1,2 +1,13 @@
 .button {
 }
+
+.hover {
+}
+
+.button:hover {
+    scale: 1.05 1.05;
+    -unity-background-image-tint-color: rgb(112, 184, 255);
+    transition-duration: 0.1s;
+    transition-timing-function: ease;
+    cursor: url("project://database/Assets/UI%20PNGS/Hover%20cursor%20icon.png?fileID=2800000&guid=902484dac1d5fdf4f9d10fec31b2210d&type=3#Hover cursor icon");
+}
