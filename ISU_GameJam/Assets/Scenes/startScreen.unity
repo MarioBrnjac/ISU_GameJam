@@ -302,8 +302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e93fa9c20095648a8215b23ff840b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startScreen: {fileID: 2083850313}
-  popUpScreen: {fileID: 0}
 --- !u!1 &1458734593
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +359,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458734593}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6eb16891808144bea2830016a0ed3700, type: 3}
   m_Name: 
@@ -376,6 +374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2083850315}
   - component: {fileID: 2083850314}
+  - component: {fileID: 2083850317}
   - component: {fileID: 2083850316}
   m_Layer: 5
   m_Name: StartScreen
@@ -426,11 +425,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083850313}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 718b715e9e0e71f4cbdf02e183328243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2083850317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083850313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6056f5b9267239346bf439d62bb7728d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timelineDirector: {fileID: 1458734595}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
