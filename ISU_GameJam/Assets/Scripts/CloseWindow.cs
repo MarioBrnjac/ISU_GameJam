@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class ButtonUI : MonoBehaviour
+public class CloseWindow : MonoBehaviour
 {
     private UIDocument _buttonDocument;
     private Button _uiButton;
-    private VisualElement _anotherElement;
+    private VisualElement _elementToHide;
     private void Awake()
     {
         _buttonDocument = GetComponent<UIDocument>();
@@ -16,16 +14,16 @@ public class ButtonUI : MonoBehaviour
             Debug.LogError("UIDocument component not found on GameObject.");
             return;
         }
-        _uiButton = _buttonDocument.rootVisualElement.Q<Button>("File");
+        _uiButton = _buttonDocument.rootVisualElement.Q<Button>("CloseButton");
         if (_uiButton == null)
         {
-            Debug.LogError("Button with the name 'File' not found.");
+            Debug.LogError("Button with the name 'CloseButton' not found.");
             return;
         }
 
-        _anotherElement = _buttonDocument.rootVisualElement.Q<VisualElement>("File_Window");
+        _uiButton = _buttonDocument.rootVisualElement.Q<Button>("CloseButton");
 
-        _anotherElement.style.display = DisplayStyle.None;
+        _elementToHide = _buttonDocument.rootVisualElement.Q<VisualElement>("Minigame_Window");
 
         _uiButton.RegisterCallback<ClickEvent>(OnPlayGameClick);
     }
@@ -38,9 +36,9 @@ public class ButtonUI : MonoBehaviour
     }
     private void OnPlayGameClick(ClickEvent evt)
     {
-        if (_anotherElement != null)
+        if (_elementToHide != null)
         {
-            _anotherElement.style.display = DisplayStyle.Flex;
+            _elementToHide.style.display = DisplayStyle.None;
         }
     }
 }

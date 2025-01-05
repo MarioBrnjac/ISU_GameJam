@@ -5,6 +5,7 @@ public class MinigameButton : MonoBehaviour
 {
     private UIDocument _buttonDocument;
     private Button _uiButton;
+    private VisualElement _anotherElement;
     private void Awake()
     {
         _buttonDocument = GetComponent<UIDocument>();
@@ -16,9 +17,14 @@ public class MinigameButton : MonoBehaviour
         _uiButton = _buttonDocument.rootVisualElement.Q<Button>("Minigame");
         if (_uiButton == null)
         {
-            Debug.LogError("Button with the name 'File' not found.");
+            Debug.LogError("Button with the name 'Minigame' not found.");
             return;
         }
+
+        _anotherElement = _buttonDocument.rootVisualElement.Q<VisualElement>("Minigame_Window");
+
+        _anotherElement.style.display = DisplayStyle.None;
+
         _uiButton.RegisterCallback<ClickEvent>(OnPlayGameClick);
     }
     private void OnDisable()
@@ -30,6 +36,9 @@ public class MinigameButton : MonoBehaviour
     }
     private void OnPlayGameClick(ClickEvent evt)
     {
-        Debug.Log("Hello World");
+        if (_anotherElement != null)
+        {
+            _anotherElement.style.display = DisplayStyle.Flex;
+        }
     }
 }
