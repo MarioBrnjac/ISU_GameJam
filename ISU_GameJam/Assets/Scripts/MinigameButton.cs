@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class ButtonUI : MonoBehaviour
+public class MinigameButton : MonoBehaviour
 {
     private UIDocument _buttonDocument;
     private Button _uiButton;
@@ -15,7 +13,7 @@ public class ButtonUI : MonoBehaviour
             Debug.LogError("UIDocument component not found on GameObject.");
             return;
         }
-        _uiButton = _buttonDocument.rootVisualElement.Q<Button>("File");
+        _uiButton = _buttonDocument.rootVisualElement.Q<Button>("Minigame");
         if (_uiButton == null)
         {
             Debug.LogError("Button with the name 'File' not found.");
