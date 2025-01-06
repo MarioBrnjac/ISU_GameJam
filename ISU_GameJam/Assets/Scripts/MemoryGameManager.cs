@@ -101,6 +101,9 @@ public class MemoryGameManager : MonoBehaviour
             Debug.Log("Match found!");
             firstCard.SetMatched();
             secondCard.SetMatched();
+
+            // Shuffle remaining unmatched cards
+            ShuffleUnmatchedCards();
         }
         else
         {
@@ -112,5 +115,27 @@ public class MemoryGameManager : MonoBehaviour
         firstCard = null;
         secondCard = null;
         isChecking = false;
+    }
+
+    void ShuffleUnmatchedCards()
+    {
+        List<Card> unmatchedCards = allCards.FindAll(card => !card.isMatched);
+        System.Random rng = new System.Random();
+        int n = unmatchedCards.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = rng.Next(n + 1);
+            Card temp = unmatchedCards[k];
+            unmatchedCards[k] = unmatchedCards[n];
+            unmatchedCards[n] = temp;
+        }
+
+        // Reposition cards after shuffling
+        for (int i = 0; i < unmatchedCards.Count; i++)
+        {
+            GameObject cardObject = unmatchedCards[i].gameObject;
+            cardObject.transform.localPosition = new Vector3((i % 4) * 100, -(i / 4) * 150, 0); // Example positioning
+        }
     }
 }

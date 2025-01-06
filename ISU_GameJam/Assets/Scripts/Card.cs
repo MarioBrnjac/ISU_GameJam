@@ -17,24 +17,54 @@ public class Card : MonoBehaviour
     {
         frontImageComponent = transform.Find("FrontImage").GetComponent<UnityEngine.UI.Image>();
         backImageComponent = transform.Find("BackImage").GetComponent<UnityEngine.UI.Image>();
-        frontImageComponent.sprite = frontImage;
-        frontImageComponent.gameObject.SetActive(false);
-        backImageComponent.gameObject.SetActive(true);
 
-        GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnCardClicked);
+        if (frontImageComponent != null)
+        {
+            frontImageComponent.sprite = frontImage;
+            frontImageComponent.gameObject.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("FrontImage component not found.");
+        }
+
+        if (backImageComponent != null)
+        {
+            backImageComponent.gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("BackImage component not found.");
+        }
+
+        UnityEngine.UI.Button button = GetComponent<UnityEngine.UI.Button>();
+        if (button != null)
+        {
+            button.onClick.AddListener(OnCardClicked);
+        }
+        else
+        {
+            Debug.LogError("Button component not found.");
+        }
     }
 
     public void OnCardClicked()
     {
         if (isFlipped || isMatched) return;
+
         isFlipped = true;
         backImageComponent.gameObject.SetActive(false);
         frontImageComponent.gameObject.SetActive(true);
 
-        cardElement.Q<UnityEngine.UIElements.Image>("card-back").style.display = DisplayStyle.None;
-
         // Notify the game manager about the flip
-        gameManager.OnCardFlipped(this);
+        if (gameManager != null)
+        {
+            gameManager.OnCardFlipped(this);
+        }
+        else
+        {
+            Debug.LogError("GameManager reference not set.");
+        }
     }
 
     public void ResetCard()
@@ -42,8 +72,6 @@ public class Card : MonoBehaviour
         isFlipped = false;
         backImageComponent.gameObject.SetActive(true);
         frontImageComponent.gameObject.SetActive(false);
-
-        cardElement.Q<UnityEngine.UIElements.Image>("card-back").style.display = DisplayStyle.Flex;
     }
 
     public Sprite GetFrontImage()
@@ -55,9 +83,9 @@ public class Card : MonoBehaviour
     {
         isMatched = true;
     }
-
     public void SetVisualElement(VisualElement element)
     {
-
+        cardElement = element;
     }
+
 }
