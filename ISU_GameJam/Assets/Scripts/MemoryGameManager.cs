@@ -2,11 +2,12 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class MemoryGameManager : MonoBehaviour
 {
     public GameObject cardPrefab; // Prefab for the card GameObject
-    public VisualTreeAsset cardTemplate; // UXML template for the card
+    public VisualTreeAsset DesktopUI; // UXML template for the card
     public UIDocument uiDocument; // Reference to the UIDocument
     public List<Sprite> cardFrontImages; // List of front images for the cards
 
@@ -14,6 +15,7 @@ public class MemoryGameManager : MonoBehaviour
     private List<Card> allCards = new List<Card>();
     private Card firstCard, secondCard;
     private bool isChecking;
+    public RectTransform cardParent;
 
     void Start()
     {
@@ -46,9 +48,26 @@ public class MemoryGameManager : MonoBehaviour
         Card card = cardObject.GetComponent<Card>();
         card.frontImage = cardFrontImages[index];
         card.gameManager = this;
+        if (cardParent == null)
+        {
+            Debug.LogError("cardParent is not assigned.");
+            return;
+        }
+        GameObject newCard = Instantiate(cardPrefab, cardParent);
+        newCard.name = "Card " + index;
+        Debug.Log("Card instantiated: " + newCard.name);
+        Card cardScript = newCard.GetComponent<Card>();
+        if (cardScript != null)
+        {
+            cardScript.gameManager = this;
+        }
+        else
+        {
+            Debug.LogError("Card script is not found on the instantiated prefab.");
+        }
 
         // Create VisualElement from the UXML template
-        VisualElement cardElement = cardTemplate.CloneTree();
+        VisualElement cardElement = DesktopUI.CloneTree();
         cardElement.Q<Button>("card-button").clicked += card.OnCardClicked;
         cardElement.Q<Image>("card-back").sprite = card.frontImage;
         cardElement.Q<Image>("card-front").sprite = card.frontImage;
@@ -60,6 +79,7 @@ public class MemoryGameManager : MonoBehaviour
         card.SetVisualElement(cardElement);
 
         allCards.Add(card);
+
     }
 
     void ShuffleCards()

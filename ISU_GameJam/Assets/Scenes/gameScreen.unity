@@ -340,6 +340,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &787737078 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8275446394859658294, guid: f2e0cde6cc2a2eb44a15fac39a3c3b11, type: 3}
+  m_PrefabInstance: {fileID: 4739758799533747312}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1139354048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1139354050}
+  - component: {fileID: 1139354049}
+  m_Layer: 0
+  m_Name: CardUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1139354049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139354048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: af97c16488d32e24e868bd961da6a9fe, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 06f5e456e5d36624daf44c62127e488a, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!4 &1139354050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139354048}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1250957032
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,9 +634,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardPrefab: {fileID: 6334994488430023424, guid: f2e0cde6cc2a2eb44a15fac39a3c3b11, type: 3}
-  cardTemplate: {fileID: 9197481963319205126, guid: 2bb82d71e99475248a170b42a45e31cd, type: 3}
-  uiDocument: {fileID: 1250957034}
-  cardFrontImages: []
+  DesktopUI: {fileID: 9197481963319205126, guid: 06f5e456e5d36624daf44c62127e488a, type: 3}
+  uiDocument: {fileID: 1139354049}
+  cardFrontImages:
+  - {fileID: -1511156813484589032, guid: cc0730a2cea88314ba0d864ff2d6defc, type: 3}
+  - {fileID: 878569841565231920, guid: 3afbee6907993e249bf7273db9bd4ecb, type: 3}
+  - {fileID: 2512960139277411984, guid: df9e275716d9f31409c78e191cd7282a, type: 3}
+  - {fileID: -4859803643569479757, guid: 350b5888e31a97449aa2271938b3ea84, type: 3}
+  - {fileID: -6362298066461224602, guid: 1e9f5ab0ad178714e93b1d7a34e1364c, type: 3}
+  - {fileID: 1116776787295742993, guid: 514045cef2b26374a878d9773b165651, type: 3}
+  - {fileID: 8609525133354069864, guid: 0116ab6f7e186d54b82d7186ae8d0d32, type: 3}
+  - {fileID: -1668710755535581534, guid: 6c9a3f82a4b27ef4f868ff3c6e126aa0, type: 3}
+  cardParent: {fileID: 787737078}
 --- !u!4 &2052382415
 Transform:
   m_ObjectHideFlags: 0
@@ -660,6 +725,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card
       objectReference: {fileID: 0}
+    - target: {fileID: 8240605330914452211, guid: f2e0cde6cc2a2eb44a15fac39a3c3b11, type: 3}
+      propertyPath: frontImage
+      value: 
+      objectReference: {fileID: -1511156813484589032, guid: cc0730a2cea88314ba0d864ff2d6defc, type: 3}
+    - target: {fileID: 8240605330914452211, guid: f2e0cde6cc2a2eb44a15fac39a3c3b11, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 2052382414}
     m_RemovedComponents:
     - {fileID: 5867808000287797216, guid: f2e0cde6cc2a2eb44a15fac39a3c3b11, type: 3}
     m_RemovedGameObjects: []
@@ -673,6 +746,7 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1250957035}
+  - {fileID: 1139354050}
   - {fileID: 2052382415}
   - {fileID: 4739758799533747312}
   - {fileID: 1437525017}
