@@ -66,6 +66,6 @@ public class PlayButton : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
 
-        SceneManager.LoadScene("gameScreen");
+        SceneManager.LoadScene("popUpScreen");
     }
 }

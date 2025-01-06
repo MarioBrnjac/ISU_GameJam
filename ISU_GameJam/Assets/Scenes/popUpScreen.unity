@@ -129,6 +129,8 @@ GameObject:
   m_Component:
   - component: {fileID: 365086666}
   - component: {fileID: 365086665}
+  - component: {fileID: 365086668}
+  - component: {fileID: 365086667}
   m_Layer: 5
   m_Name: PopUpNotiUI
   m_TagString: Untagged
@@ -170,6 +172,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &365086667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365086664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89734554a1f55f14cbf357a6f4fc1dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &365086668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365086664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623f99dbb5dd23342a39244abe266d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1977308197
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +222,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977308197}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &1977308199
 Camera:
   m_ObjectHideFlags: 0
