@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement class="card-element">
+        <ui:Image name="card-back" class="card-back" />
+        <ui:Image name="card-front" class="card-front" style="display: none;" />
+        <ui:Button name="card-button" class="card-button" />
+    </ui:VisualElement>
+</ui:UXML>
